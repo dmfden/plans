@@ -230,10 +230,14 @@ button {
         flex-direction: row;
         padding-bottom: 40px;
         padding-top: 40px;
-        padding-left: 0;
+        padding-left: 10px;
         padding-right: 46px;
         justify-content: end;
+        gap: 10px;
+    }
+    @include _breakpoint_lg {
         gap: 34px;
+        padding-left: 0;
     }
 
     &__tile {
@@ -347,8 +351,11 @@ button {
             }
             @include _breakpoint_md {
                 font-size: 15px;
-                padding: 11px 56px;
+                padding: 11px 32px;
                 margin-top: auto;
+            }
+            @include _breakpoint_lg {
+                padding: 11px 56px;
             }
         }
 
