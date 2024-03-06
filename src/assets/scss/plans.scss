@@ -1,0 +1,419 @@
+@import './colors.scss';
+button:focus,
+a:focus {
+    outline-color: rgb(150, 37, 255);
+    outline-width: 6px;
+    outline-offset: 6px;
+    outline-style: solid;
+}
+button {
+    font-family: inherit;
+}
+
+.appWrapper {
+    min-height: 100dvh;
+    width: 100vw;
+    background: linear-gradient(180deg, #f5f5fa 0%, #f2dad5 44.15%, #a1abd6 100%);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: $primary-gray;
+}
+.container {
+    padding: 0 16px;
+    margin: 0 auto;
+
+    @include _breakpoint_xl {
+        width: 937px;
+        padding: 0;
+    }
+}
+
+.header {
+    padding: 32px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 41px;
+
+    @include _breakpoint_lg {
+        padding: 32px 50px;
+    }
+    .burger-button {
+        background: transparent;
+        width: 22px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0;
+        border: 0;
+        gap: 4px;
+        cursor: pointer;
+
+        &__line1 {
+            //width: 72%;
+            width: 72%;
+            height: 3px;
+            background-color: $dark-blue;
+        }
+        &__line2 {
+            width: 100%;
+            height: 3px;
+            background-color: $dark-blue;
+            transition: all 1s;
+        }
+        &__text {
+            width: 0;
+            height: 0;
+            position: relative;
+            left: -8000px;
+        }
+        &:hover {
+            animation-timing-function: ease-in-out;
+            animation-name: pulse;
+            animation-duration: 0.8s;
+            animation-iteration-count: 4;
+        }
+    }
+    &__button {
+        background-color: $violet-general;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 500;
+        padding: 10px 30px;
+        border-radius: 24px;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $violet-dark;
+        }
+    }
+}
+.priceblock {
+    margin-bottom: 64px;
+    .priceblock-head {
+        margin-bottom: 32px;
+        @include _breakpoint_md {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            margin-bottom: 96px;
+        }
+        &__title {
+            font-size: 40px;
+            color: $dark-blue;
+            margin-bottom: 32px;
+            span {
+                font-size: 0.86em;
+            }
+        }
+        &__subtitle {
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1.4;
+            margin-bottom: 32px;
+            @include _breakpoint_md {
+                margin-bottom: 0;
+            }
+        }
+        &__content {
+            @include _breakpoint_md {
+                width: 63%;
+            }
+        }
+    }
+
+    .priceblock__cta-control {
+        width: 76.39%;
+        margin: 0 auto;
+        position: relative;
+        background-color: #fff;
+        border-radius: 24px;
+        overflow: hidden;
+
+        @include _breakpoint_md {
+            width: auto;
+            margin: 0;
+            min-width: 220px;
+        }
+
+        .cta-jogger {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            width: 50%;
+            z-index: 1;
+            border-radius: 24px;
+            transition: all 0.6s;
+            background-color: $violet-general;
+        }
+        .cta-container {
+            display: flex;
+            z-index: 2;
+            position: relative;
+            color: $dark-blue;
+            button {
+                width: 50%;
+                border: none;
+                padding: 14px 32px;
+                border: none;
+                outline: none;
+                background-color: transparent;
+                transition: color 0.36s linear;
+                font-size: 12px;
+                font-weight: 500;
+                text-transform: uppercase;
+                cursor: pointer;
+                @include _breakpoint_md {
+                    padding: 14px 24px;
+                }
+            }
+        }
+    }
+
+    &.yearly-price {
+        [data-price='yearly-price'] {
+            visibility: visible;
+
+            animation-name: backInDown;
+            animation-duration: 0.8s;
+        }
+        [data-price='monthly-price'] {
+            visibility: hidden;
+            animation-name: backOutUp;
+            animation-duration: 0.4s;
+        }
+        [data-cta-plans='yearly-price'] {
+            color: #fff;
+        }
+        .cta-jogger {
+            right: 0;
+        }
+    }
+
+    &.monthly-price {
+        [data-price='monthly-price'] {
+            visibility: visible;
+
+            animation-name: backInDown;
+            animation-duration: 0.8s;
+        }
+        [data-price='yearly-price'] {
+            visibility: hidden;
+            animation-name: backOutUp;
+            animation-duration: 0.4s;
+        }
+        [data-cta-plans='monthly-price'] {
+            color: #fff;
+        }
+        .cta-jogger {
+            right: 50%;
+        }
+    }
+}
+
+.plans-cards {
+    background: rgba(255, 255, 255, 0.64);
+    border-radius: 26px;
+    padding-top: 32px;
+    padding-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    @include _breakpoint_md {
+        flex-direction: row;
+        padding-bottom: 40px;
+        padding-top: 40px;
+        padding-left: 0;
+        padding-right: 46px;
+        justify-content: end;
+        gap: 34px;
+    }
+
+    &__tile {
+        //padding-left: 28px;
+        padding-left: 8.6vw;
+        //padding-right: 28px;
+        padding-right: 8.6vw;
+        font-weight: 500;
+
+        @include _breakpoint_md {
+            width: 232px;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__price-container {
+            display: flex;
+            align-items: baseline;
+            margin-bottom: 32px;
+        }
+
+        &__price-holder {
+            position: relative;
+            height: 38px;
+            display: grid;
+            grid-template-areas: 'priceItem priceItem priceItem';
+            margin-right: 4px;
+        }
+        &__price {
+            animation-fill-mode: both;
+            transition: all 1s;
+            //font-size: 36px;
+            font-size: 11.2vw;
+            font-weight: 700;
+            color: $dark-blue;
+            grid-area: priceItem;
+            @include _breakpoint_md {
+                font-size: 36px;
+            }
+        }
+        &__text {
+            font-size: 17px;
+        }
+        &__title {
+            //font-size: 28px;
+            font-size: 8.7vw;
+            padding-bottom: 20px;
+            color: $dark-blue;
+            @include _breakpoint_md {
+                font-size: 28px;
+            }
+        }
+        &__subtitle {
+            // font-size: 15px;
+            font-size: 4.7vw;
+            margin-bottom: 16px;
+            line-height: 1.4;
+            @include _breakpoint_md {
+                font-size: 15px;
+            }
+        }
+        &__list {
+            //font-size: 15px;
+            font-size: 4.7vw;
+            margin-bottom: 40px;
+            @include _breakpoint_md {
+                font-size: 15px;
+            }
+            li {
+                display: grid;
+                grid-template-columns: 20px auto;
+                align-items: center;
+                margin-bottom: 10px;
+                gap: 10px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                .icon-box {
+                    width: 20px;
+                    height: 20px;
+                    svg {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+        &__button {
+            background-color: $dark-blue;
+            color: #fff;
+            //font-size: 15px;
+            font-size: 4.7vw;
+            font-weight: 500;
+            //padding: 11px 56px;
+            padding: 3.5vw 17.5vw;
+            border: none;
+            border-radius: 24px;
+            cursor: pointer;
+            width: fit-content;
+            margin: 0 auto;
+            &:hover {
+                background-color: $violet-dark;
+            }
+            &.secondary {
+                background-color: $violet-general;
+                &:hover {
+                    background-color: $violet-dark;
+                }
+            }
+            @include _breakpoint_md {
+                font-size: 15px;
+                padding: 11px 56px;
+                margin-top: auto;
+            }
+        }
+
+        &.most-popular {
+            box-shadow: 0px 11px 12px 3px rgba(123, 114, 193, 0.6);
+            //padding-top: 20px;
+            padding-top: 6.2vw;
+            //padding-bottom: 20px;
+            padding-bottom: 6.2vw;
+            border-radius: 24px;
+            padding-left: 5.6vw;
+            padding-right: 5.6vw;
+            margin-left: 2.6vw;
+            margin-right: 2.6vw;
+            color: #fff;
+            background-color: $dark-blue;
+            @include _breakpoint_md {
+                padding-top: 20px;
+                padding-bottom: 20px;
+                padding-left: 30px;
+                padding-right: 30px;
+                margin: 0;
+                width: 292px;
+            }
+
+            .plans-cards__tile__price,
+            .plans-cards__tile__title {
+                color: #fff;
+            }
+
+            .plans-cards__tile__list {
+                margin-bottom: 22px;
+            }
+
+            .plans-cards__badge {
+                display: flex;
+                justify-content: center;
+                &__title {
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    color: $violet-general;
+                    //font-size: 10px;
+                    font-size: 3.1vw;
+                    // padding: 7px 17px;
+                    padding: 2.2vw 5.3vw;
+                    background-color: #403879;
+                    border-radius: 24px;
+                    margin-bottom: 20px;
+                    @include _breakpoint_md {
+                        font-size: 10px;
+                        padding: 7px 17px;
+                    }
+                }
+            }
+        }
+    }
+
+    .most-popular-wrapper {
+        @include _breakpoint_md {
+            position: relative;
+            width: 292px;
+            .most-popular {
+                position: absolute;
+                top: -70px;
+                .plans-cards__badge {
+                    justify-content: flex-end;
+                }
+            }
+        }
+    }
+}
+

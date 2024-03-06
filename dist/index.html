@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" type="image/png" href="/assets/images/favicon.png" />
+        <link rel="stylesheet" href="./assets/css/index.css" />
+        <script type="module" src="./assets/js/main.min.js"></script>
+        <title>Pricing Page</title>
+    </head>
+    <body class="appWrapper">
+        <header class="header">
+            <button class="burger-button">
+                <div class="burger-button__line1"></div>
+                <div class="burger-button__line2"></div>
+                <div class="burger-button__line1"></div>
+                <span class="burger-button__text">Site Menu</span>
+            </button>
+            <img src="./assets/images/logo-frame.svg" alt="Some Company Logo" class="logo" />
+            <button class="header__button">Join Now</button>
+        </header>
+        <main>
+            <section class="priceblock container yearly-price" id="plansWrapper">
+                <div class="priceblock-head">
+                    <div class="priceblock-head__content">
+                        <h1 class="priceblock-head__title">Plans <span>&</span> Pricing</h1>
+                        <h2 class="priceblock-head__subtitle">
+                            Whether your time-saving automation needs are large or small, we’re here to help you scale.
+                        </h2>
+                    </div>
+                    <div class="priceblock__cta-control" id="pricesControl">
+                        <div class="cta-jogger"></div>
+                        <div class="cta-container" aria-controls="plansPricing">
+                            <button data-cta-plans="monthly-price">Monthly</button>
+                            <button class="active" data-cta-plans="yearly-price">Yearly</button>
+                        </div>
+                    </div>
+                </div>
+                <section class="plans-cards" aria-live="polite" id="plansPricing">
+                    <!-- =========================  STARTER ============================================ -->
+                    <article class="plans-cards__tile">
+                        <div class="plans-cards__tile__price-container">
+                            <div class="plans-cards__tile__price-holder">
+                                <p class="plans-cards__tile__price" data-price="monthly-price">$19</p>
+                                <p class="plans-cards__tile__price" data-price="yearly-price">$12</p>
+                            </div>
+                            <p class="plans-cards__tile__text">/month</p>
+                        </div>
+                        <h3 class="plans-cards__tile__title">Starter</h3>
+                        <h4 class="plans-cards__tile__subtitle">Unleash the power of automation.</h4>
+                        <ul class="plans-cards__tile__list">
+                            <li>
+                                <div class="icon-box">
+                                    <svg>
+                                        <use xlink:href="/assets/icons/sprite.svg#check-circle-2" />
+                                    </svg>
+                                </div>
+                                <span>Multi-step Zaps</span>
+                            </li>
+                            <li>
+                                <div class="icon-box">
+                                    <svg>
+                                        <use xlink:href="/assets/icons/sprite.svg#check-circle-2" />
+                                    </svg>
+                                </div>
+                                <span>3 Premium Apps</span>
+                            </li>
+                            <li>
+                                <div class="icon-box">
+                                    <svg>
+                                        <use xlink:href="/assets/icons/sprite.svg#check-circle-2" />
+                                    </svg>
+                                </div>
+                                <span>2 Users team</span>
+                            </li>
+                        </ul>
+                        <button class="plans-cards__tile__button">Choose plan</button>
+                    </article>
+
+                    <!-- =========================  PROFESSIONAL ============================================ -->
+                    <article class="plans-cards__tile">
+                        <div class="plans-cards__tile__price-container">
+                            <div class="plans-cards__tile__price-holder">
+                                <p class="plans-cards__tile__price" data-price="monthly-price">$54</p>
+                                <p class="plans-cards__tile__price" data-price="yearly-price">$36</p>
+                            </div>
+                            <p class="plans-cards__tile__text">/month</p>
+                        </div>
+                        <h3 class="plans-cards__tile__title">Professional</h3>
+                        <h4 class="plans-cards__tile__subtitle">Advanced tools to take your work to the next level.</h4>
+                        <ul class="plans-cards__tile__list">
+                            <li>
+                                <div class="icon-box">
+                                    <svg>
+                                        <use xlink:href="/assets/icons/sprite.svg#check-circle-2" />
+                                    </svg>
+                                </div>
+                                <span>Multi-step Zaps</span>
+                            </li>
+                            <li>
+                                <div class="icon-box">
+                                    <svg>
+                                        <use xlink:href="/assets/icons/sprite.svg#check-circle-2" />
+                                    </svg>
+                                </div>
+                                <span>Unlimited Premium Apps</span>
+                            </li>
+                            <li>
+                                <div class="icon-box">
+                                    <svg>
+                                        <use xlink:href="/assets/icons/sprite.svg#check-circle-2" />
+                                    </svg>
+                                </div>
+                                <span>50 Users team</span>
+                            </li>
+                            <li>
+                                <div class="icon-box">
+                                    <svg>
+                                        <use xlink:href="/assets/icons/sprite.svg#check-circle-2" />
+                                    </svg>
+                                </div>
+                                <span>Shared Workspace</span>
+                            </li>
+                        </ul>
+                        <button class="plans-cards__tile__button">Choose plan</button>
+                    </article>
+
+                    <!-- =========================  COMPANY  ============================================ -->
+                    <div class="most-popular-wrapper">
+                        <article class="plans-cards__tile most-popular">
+                            <div class="plans-cards__badge">
+                                <h4 class="plans-cards__badge__title">Most Popular</h4>
+                            </div>
+                            <div class="plans-cards__tile__price-container">
+                                <div class="plans-cards__tile__price-holder">
+                                    <p class="plans-cards__tile__price" data-price="monthly-price">$89</p>
+                                    <p class="plans-cards__tile__price" data-price="yearly-price">$56</p>
+                                </div>
+                                <p class="plans-cards__tile__text">/month</p>
+                            </div>
+                            <h3 class="plans-cards__tile__title">Company</h3>
+                            <h4 class="plans-cards__tile__subtitle">Automation plus enterprise-grade features.</h4>
+                            <ul class="plans-cards__tile__list">
+                                <li>
+                                    <div class="icon-box">
+                                        <svg>
+                                            <use xlink:href="/assets/icons/sprite.svg#check-circle-2" />
+                                        </svg>
+                                    </div>
+                                    <span>Multi-step Zaps</span>
+                                </li>
+                                <li>
+                                    <div class="icon-box">
+                                        <svg>
+                                            <use xlink:href="/assets/icons/sprite.svg#check-circle-2" />
+                                        </svg>
+                                    </div>
+                                    <span>Unlimited Premium Apps</span>
+                                </li>
+                                <li>
+                                    <div class="icon-box">
+                                        <svg>
+                                            <use xlink:href="/assets/icons/sprite.svg#check-circle-2" />
+                                        </svg>
+                                    </div>
+                                    <span>Unlimited Users Team</span>
+                                </li>
+                                <li>
+                                    <div class="icon-box">
+                                        <svg>
+                                            <use xlink:href="/assets/icons/sprite.svg#check-circle-2" />
+                                        </svg>
+                                    </div>
+                                    <span>Advanced Admin</span>
+                                </li>
+                                <li>
+                                    <div class="icon-box">
+                                        <svg>
+                                            <use xlink:href="/assets/icons/sprite.svg#check-circle-2" />
+                                        </svg>
+                                    </div>
+                                    <span>Custom Data Retention</span>
+                                </li>
+                            </ul>
+                            <button class="plans-cards__tile__button secondary">Choose plan</button>
+                        </article>
+                    </div>
+                </section>
+            </section>
+        </main>
+    </body>
+</html>
+
