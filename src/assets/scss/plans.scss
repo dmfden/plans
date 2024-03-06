@@ -75,6 +75,7 @@ button {
         }
     }
     &__button {
+        display: none;
         background-color: $violet-general;
         color: #fff;
         font-size: 18px;
@@ -83,6 +84,9 @@ button {
         border-radius: 24px;
         border: none;
         cursor: pointer;
+        @include _breakpoint_md {
+            display: block;
+        }
 
         &:hover {
             background-color: $violet-dark;
